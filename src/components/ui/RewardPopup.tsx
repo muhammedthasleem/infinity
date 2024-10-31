@@ -20,7 +20,7 @@ export default function RewardPopup({
 }: RewardPopupProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[600px] border-0 bg-[#1a1614]/95 p-0 text-white">
+      <DialogContent className="sm:max-w-[600px]  border-0 bg-[#1a1614]/95 p-0 text-white">
         <motion.div
           className="relative overflow-hidden rounded-lg px-6 py-8"
           initial={{ opacity: 0, scale: 0.95 }}

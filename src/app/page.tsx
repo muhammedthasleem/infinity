@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress"
 import { Sparkles } from "lucide-react"
 import Sparkle from '@/components/ui/sparkle'
 import RewardPopup from '@/components/ui/RewardPopup'
+import { div } from 'framer-motion/client'
 
 const isOpen = true
 const currentXP = 50000
@@ -33,7 +34,7 @@ function LevelUpPopup() {
           const increment = Math.ceil((currentXP - prevXP) / 15)
           return prevXP + increment >= currentXP ? currentXP : prevXP + increment
         })
-      }, 1)
+      }, 10)
 
       return () => {
         clearTimeout(progressTimer)
@@ -56,7 +57,8 @@ function LevelUpPopup() {
   }, [progress])
 
   return (
-    <AnimatePresence>
+    
+    <AnimatePresence >
       {isOpen && (
         <>
           <Sparkle isVisible={showSparkles} />
@@ -64,7 +66,7 @@ function LevelUpPopup() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center"
+            className=" inset-0 z-50 p-10  flex items-center justify-center"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_60%)]" />
             <motion.div
